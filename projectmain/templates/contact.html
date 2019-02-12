@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<br>
+<div class="container" style="margin-left:100px">
+ <div class="card-columns" > 
+  <div class="card" style="width:230px;height:300px;">
+    <img class="card-img-top" src="{{ complaint }}" alt="Card image" style="width:100%;height:200px;">
+     <div class="hoveredit">
+    <div class="card-body">
+      <a href="#" class="trr"> <h4 class="card-title">Distributor Complaint</h4></a>
+    </div>
+</div>
+  </div>
+  <div class="card" style="width:230px;height:300px" >
+    <img class="card-img-top" src="{{ contact }}" alt="Card image" style="width:100%;height:200px;">
+      <div class="hoveredit">
+    <div class="card-body">
+      <a href="#" class="trr"> <h4 class="card-title">Contact Distributor</h4></a>
+    </div>
+  </div>
+  </div>
+  <div class="card" style="width:230px;height:300px">
+    <img class="card-img-top" src="{{ feedback }}" alt="Card image" style="width:100%;height:200px;">
+     <div class="hoveredit">
+    <div class="card-body">
+      <a href="#" class="trr"> <h4 class="card-title">Website feedback</h4></a>
+    </div>
+</div>
+  </div>
+</div>
+</div>
+<br>
+{% endblock content %}

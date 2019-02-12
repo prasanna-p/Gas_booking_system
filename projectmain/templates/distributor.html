@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% with user=db.query.filter_by(email=current_user.email).first() %}
+{% if user %}
+
+<h1>{{ user.username }}</h1>
+
+{% else %}
+ 
+ <h1>{{ current_user.email }}</h1>
+
+{% endif %}
+{% endwith %}
+{% endblock content %}
