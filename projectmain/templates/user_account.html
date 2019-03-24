@@ -1,14 +1,64 @@
 {% extends 'layout.html' %}
+
 {% block content %}
-{% with user=db.query.filter_by(email=current_user.email).first() %}
-{% if user %}
+  <br><br>
+  <div id="wrapper">
 
-<h1>{{ user.username }}</h1>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+            	<li>
+            		 <a href="#"></a>
+            	</li>
 
-{% else %}
- 
- <h1>{{ current_user.email }}</h1>
+                <li>
+                    <a href="profile">Profile</a>
+                </li>
+                <li>
+                    <a href="Uconnection">Connection</a>
+                </li>
+                <li>
+                    <a href="Bstatus">Status</a>
+                </li>
+                <li>
+                    <a href="FeedBack">Feedback</a>
+                </li>
+                <li>
+                    <a href="Complaint">Complaint Box</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
 
-{% endif %}
-{% endwith %}
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+          {% block mesg %}  {% endblock mesg %}
+        		 {% with messages = get_flashed_messages(with_categories=true) %}
+            		{% if messages %}
+              			{% for category, message in messages %}
+               				 <div class="alert alert-{{ category }}">
+                 			 {{ message }}
+                			</div>
+              			{% endfor %}
+            		{% endif %}
+          		{% endwith %}
+          			{% block user_ac %}
+
+          			{% with user=db.query.filter_by(email=current_user.email).first() %}
+                         {% if current_user.email==user.email %}
+                          
+                          <h3> Welcome {{ user.username }}</h3>
+             
+                         {% endif %}
+                        {% endwith %}
+
+          			{% endblock %}
+        </div>
+
+        <!-- /#page-content-wrapper -->
+
+    </div>
+
 {% endblock content %}
+

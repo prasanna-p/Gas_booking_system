@@ -1,0 +1,151 @@
+{% extends 'admin.html' %}
+
+{% block admin_ac %}
+<div id="page-content-wrapper" style="margin-left:-100px;margin-right:-200px;width: 100%">
+<form method="POST" action="" >
+            {{ form.hidden_tag() }}
+         <fieldset class="form-group col-md-10">
+          <legend class="border-bottom mb-4 ">{{ legend }}</legend>
+                 <div class="form-group">
+                    {{ form.state.label(class="form-control-label") }}
+
+                    {% if form.state.errors %}
+                        {{ form.state(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.state.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.state(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.district.label(class="form-control-label") }}
+
+                    {% if form.district.erdnamerors %}
+                        {{ form.district(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.district.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.district(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.agency_name.label(class="form-control-label") }}
+
+                    {% if form.agency_name.erdnamerors %}
+                        {{ form.agency_name(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.agency_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.agency_name(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.tcylinder.label(class="form-control-label") }}
+
+                    {% if form.tcylinder.erdnamerors %}
+                        {{ form.tcylinder(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.tcylinder.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.tcylinder(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.acylinder.label(class="form-control-label") }}
+
+                    {% if form.acylinder.errors %}
+                        {{ form.acylinder(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.acylinder.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.acylinder(class="form-control form-control-sm") }}
+                    {% endif %}
+                  </div>
+            </fieldset>
+            <div class="form-group">
+               {{ form.submit(class="btn btn-outline-info btn-sm") }} 
+            </div>
+            </form>
+        </div>
+   <table class="table table-bordered" style="margin-left:300px;margin-top:-550px;">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Agency Name</th>
+      <th scope="col">Total Cylinder</th>
+      <th scope="col">Available Cylinder</th>
+      <th scope="col">District</th>
+      <th scope="col">  </th>
+      <th scope="col">  </th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for c in cyli %}
+  {% with a=agent.query.filter_by(aid=c.aid).first() %}
+  {% with b=dist.query.filter_by(did=a.did).first() %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{  a.agency_name }}</td>
+      <td>{{ c.total_cylinder }}</td>
+      <td>{{ c.availabel_cylinder }}</td>
+      <td>{{ b.dname }}</td>
+      <td><a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('Admin.update_cylinder', sno=c.sno,aid=c.aid) }}">edit</a></td>
+      <td><a class="btn btn-danger btn-sm mt-1 mb-1" href="{{ url_for('Admin.delete_cylinder', sno=c.sno) }}">Delete</a></td>     
+    </tr>
+    {% endwith %}
+    {% endwith %}
+   {% endfor %}
+</tbody>
+</table>
+<script>
+        var state_select = document.getElementById("state");
+        var dist_select = document.getElementById("district");
+        var age_select = document.getElementById("agency_name");
+        state_select.onchange = function()  {
+             
+            st = state_select.value;
+            
+            fetch('/district/' + st).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var district of data.dist) {
+                        optionHTML += '<option value="' + district.id + '">' + district.name + '</option>';
+                    }
+                    dist_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+       dist_select.onchange = function()  {
+             
+            di = dist_select.value;
+
+          fetch('/agency_name/' + di).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var agency_name of data.agents) {
+                        optionHTML += '<option value="' + agency_name.id + '">' + agency_name.name + '</option>';
+                    }
+                    age_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+       
+    </script>
+{% endblock admin_ac %}

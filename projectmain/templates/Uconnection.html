@@ -1,0 +1,38 @@
+{% extends 'user_account.html' %}
+
+{% block user_ac %}
+ <table class="table" frame='box' style="margin-right:300px;margin-left:-30px">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col" colspan="2">Consumer Gas Card Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Consumer No</th>
+      <td>{{ user.id }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Consumer Name</th>
+      <td>{{ user.fname }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Connection Type</th>
+      <td>{{ ctype.cname }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Agency Name</th>
+      <td>{{ agents.agency_name }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Agency adress</th>
+      <td>{{ agents.adress }}</td>
+    </tr>
+    <tr>
+      <td scope="row" colspan="2">
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('Consumer.Booking',uid=user.id,aid=agents.aid) }}">Book Gas</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock user_ac %}

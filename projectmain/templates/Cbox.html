@@ -1,0 +1,37 @@
+{% extends 'admin.html' %}
+
+{% block admin_ac %}
+<h3>Complaints From User</h3>
+ <table class="table table-bordered " style="margin-right:300px;margin-left:-120px">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Complaint</th>
+      <th scope="col">Date sent</th>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Customer Contact</th>
+      <th scope="col">Agency Name</th>
+      <th scope="col">Agency Contact</th>
+      <th scope="col">Agency Email</th>
+    </tr>
+  </thead>
+  <tbody >
+  	{% for c in clist %}
+    {% with user=userR.query.filter_by(id=c.uid).first() %}
+  	{% with a=agent.query.filter_by(aid=user.aid).first() %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ c.description }}</td>
+      <td>{{ c.sdate.strftime('%Y-%m-%d') }}</td>
+      <td>{{ user.fname }}</td>
+      <td>{{ user.phone_no }}</td>
+      <td>{{ a.agency_name }}</td>
+      <td>{{ a.phone_no }}</td>
+      <td>{{ a.email }}</td>
+    </tr>
+   	{% endwith %}
+    {% endwith %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock admin_ac %}

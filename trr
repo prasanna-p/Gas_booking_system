@@ -1,2 +1,7 @@
 from dbcode import db
 from dbcode import state,district,city,agent,User_reg,connection_type,booking,feedback
+('udupi','udupi'),('mangalore','mangalore'),('bangalore','bangalore'),('belgum','belgum'),('kochi','kochi'),('chennai','chennai'),('kannur','kannur'),('hyderabad','hyderabad'),('agra','agra'),('saran','saran')
+
+('udupi','udupi'),('mangalore','mangalore'),('bangalore','bangalore'),('belgum','belgum'),('kochi','kochi'),('chennai','chennai'),('kannur','kannur'),('hyderabad','hyderabad'),('agra','agra'),('saran','saran')
+
+('brahmavara','brahmavara'),('kundapura','kundapura'),('barkur','barkur'),('santekatte','santekatte'),('manipal','manipal'),('kadri','kadri'),('kavoor','kavoor'),('kottara','kottara'),('katil','katil'),('vaynad','vaynad'),('shabarimale','shabarimale'),('kottara','kottara'),('taj','taj'),('lacknow','lacknow')

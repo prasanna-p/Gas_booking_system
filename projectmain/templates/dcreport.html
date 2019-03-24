@@ -1,0 +1,37 @@
+{% extends 'distributor.html' %}
+
+{% block agent_ac %}
+<h4>Customer Reports</h4>
+ <table class="table table-bordered " style="margin-right:300px;margin-left:-100px">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Customer No</th>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone No</th>
+      <th scope="col">Connection Type</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody >
+  	{% for c in users %}
+  	{% with ct=ctype.query.filter_by(ctid=c.ctid).first() %}
+  	{% with a=city.query.filter_by(cid=c.cid).first() %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ c.id }}</td>
+      <td>{{ c.fname }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.phone_no }}</td>
+      <td>{{ ct.cname }}</td>
+      <td>{{ c.adress }}</td>
+      <td>{{ a.cname }}</td>
+    </tr>
+    {% endwith %}
+    {% endwith %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock agent_ac %}

@@ -1,0 +1,31 @@
+{% extends 'distributor.html' %}
+
+{% block agent_ac %}
+
+  <table class="table table-bordered" style="margin-right:300px;margin-left:-30px">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Consumer No</th>
+      <th scope="col">Consumer Name</th>
+      <th scope="col">Booked Date</th>
+      <th scope="col">Status</th>
+       <th scope="col"></th>
+ </tr>
+  </thead>
+  <tbody>
+  {% for b in book %}
+  {% with c=user.query.filter_by(id=b.uid).first() %}
+ <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{  c.id }}</td>
+      <td>{{  c.fname }}</td>
+      <td>{{  b.bdate.strftime('%Y-%m-%d') }}</td>
+      <td>{{  b.status }}</td>
+      <td><a class="btn btn-info btn-sm mt-1 mb-1" href="{{url_for('Agent.Brupdate',bid=b.bid) }}">accept</a></td>
+    </tr>
+    {% endwith %}
+   {% endfor %}
+</tbody>
+</table>
+{% endblock agent_ac %}

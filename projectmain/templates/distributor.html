@@ -1,14 +1,61 @@
 {% extends 'layout.html' %}
+
 {% block content %}
-{% with user=db.query.filter_by(email=current_user.email).first() %}
-{% if user %}
+<br><br>
+ <div id="wrapper">
 
-<h1>{{ user.username }}</h1>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
 
-{% else %}
- 
- <h1>{{ current_user.email }}</h1>
+                <li>
+                    <a href="dprofile">Profile</a>
+                </li>
+                <li>
+                    <a href="brequest">Request</a>
+                </li>
+                <li>
+                    <a href="Dcreport">Reports</a>
+                </li>
+                <li>
+                    <a href="AgentFeedBack">Feedback</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
 
-{% endif %}
-{% endwith %}
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% block mesg %}  {% endblock mesg %}
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                        {% for category, message in messages %}
+                             <div class="alert alert-{{ category }}">
+                             {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                    {% block agent_ac %}
+
+                    {% with user=db.query.filter_by(email=current_user.email).first() %}
+                         {% if current_user.email==user.email %}
+                          
+                          <h3> Welcome to {{ user.username }}</h3>
+             
+                         {% endif %}
+                        {% endwith %}
+
+                    {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /#page-content-wrapper -->
+
+    </div>
 {% endblock content %}

@@ -1,7 +1,19 @@
 {% extends 'layout.html' %}
-
+{% block mesg %}
+    <div class='bg3' style="margin-right:-110%;margin-left: -35%; ">
+    <div id="page-content-wrapper" style="margin-left:700px;width:30%;color:green;font-weight: bold">
+            <br><br>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        {% endblock mesg %}
 {% block content %}
- <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -42,12 +54,12 @@
                 </div>
             </fieldset>
             <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+                {{ form.submit(class="btn btn-outline-success") }}
             </div>
             <small class="text-muted ml-2">
-                <a href="#">Forgot Password?</a>
+                <a href="{{ url_for('Agent.dreset_request') }}" style="color:green">Forgot Password?</a>
             </small>
         </form>
     </div>
-
+</div>
 {% endblock content %}

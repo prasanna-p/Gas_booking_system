@@ -2,6 +2,71 @@
 
 {% block content %}
 
-<h1>{{ current_user.email }}</h1>
+<br><br>
+  <div id="wrapper">
 
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="st">Manage State</a>
+                </li>
+                <li>
+                    <a href="dist">Manage District</a>
+                </li>
+                <li>
+                    <a href="cityform">Manage City</a>
+                </li>
+                <li>
+                    <a href="dregister">Agency Registration</a>
+                </li>
+                <li>
+                    <a href="cylinder">Cylinder</a>
+                </li>
+                <li>
+                    <a href="connection">Connection</a>
+                </li>
+                <li>
+                    <a href="AfeedBack">Feedback</a>
+                </li>
+                 <li>
+                    <a href="Cbox">Complaint Box</a>
+                </li>
+                 <li class="sidebar-nav-item dropdown">
+                    <a class="sidebar-nav dropdown-toggle" data-toggle="dropdown" id="Preview" href="#">Report</a>
+                    <div class="dropdown-menu" aria-labelledby="Preview">
+                    <a href="creport">consumer Report</a>
+                    <a href="areport">Agency Report</a>
+                </div>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" >
+            <div class="container-fluid" >
+                {% block mesg %} {% endblock mesg %}
+            			 {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                             <div class="alert alert-{{ category }}">
+                             {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                    {% block admin_ac %}
+                          
+                          <h3> Welcome to Admin</h3>
+
+                    {% endblock %}
+            
+            </div>
+        </div>
+
+        <!-- /#page-content-wrapper -->
+
+    </div>
+<br><br><br><br><br><br><br>
 {% endblock content %}

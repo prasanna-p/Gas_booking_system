@@ -1,0 +1,3116 @@
+<!DOCTYPE html>
+<html class="" lang="en_US"><head>
+    <script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/cbgapi.loaded_1" async=""></script><script async="" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/analytics.js"></script><script type="text/javascript" async="" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/plusone_002.js" gapi_processed="true"></script><script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/cbgapi.loaded_0" async=""></script><script type="text/jscript" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/mobile_redirect.js" charset="utf-8"></script>
+    <!-- base href="https://onlinecourses.nptel.ac.in/noc19_cs12/" -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="https://storage.googleapis.com/static-prod-v11/modules/nptel/assets/img/favicon.ico">
+    <meta charset="utf-8">
+    
+  <title>
+    Data Base Management System -
+    
+  - Unit 3 - Week 1
+
+  </title>
+
+    <!-- jQuery should be imported first -->
+    <script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/jquery_002.js"></script>
+    <script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/registry.js"></script>
+
+
+    <!-- The following translated strings are used in activity-generic.js and should be
+    declared before that file is imported. -->
+    <script>
+      // inline translations
+      var trans = {};
+
+      
+      trans.CHECK_ANSWER_TEXT =
+          " Check Answer ";
+
+      
+      trans.CHECK_ANSWERS_TEXT =
+          " Check Answers ";
+
+      
+      trans.SHOW_ANSWER_TEXT =
+          " Skip and Show Answer ";
+
+      
+      trans.SAVE_ANSWERS_TEXT =
+          " Save Answers ";
+
+      
+      trans.SAVE_DRAFT_TEXT =
+          " Save Draft ";
+
+      
+      trans.SUBMIT_ANSWERS_TEXT =
+          " Submit Answers ";
+
+      
+      trans.SUBMIT_ASSIGNMENT_TEXT =
+          " Submit Assignment ";
+
+      
+      trans.SUBMIT_REVIEW_TEXT =
+          " Submit Review ";
+
+      
+      trans.SELECT_ANSWER_PROMPT =
+          " Please click one of the buttons for your answer. ";
+
+      
+      trans.ALL_CORRECT_TEXT =
+          " All your answers are correct! ";
+
+      
+      trans.NUM_CORRECT_TEXT =
+          " Number of questions you answered correctly ";
+
+      
+      trans.YOUR_SCORE_TEXT =
+          " You received a score on this assessment of ";
+
+      
+      trans.LESSONS_TO_REVIEW_TEXT =
+          " Here are lessons you could review to improve your score ";
+
+      
+      trans.PERFECT_SCORE_SAVE_TEXT =
+          " Congratulations! Press the \&#39;Submit Answers\&#39; button to submit your grade. ";
+
+      
+      trans.GENERIC_SAVE_TEXT =
+          " Press the \&#39;Submit Answers\&#39; button below to save your scores. You can also edit your answers above before clicking \&#39;Submit Answers\&#39;. ";
+
+      
+      trans.SUBMIT_ASSIGNMENT_CONFIRMATION =
+          " Are you sure you want to submit this assignment? ";
+
+      
+      trans.SUBMIT_REVIEW_CONFIRMATION =
+          " Are you sure you want to submit this review? ";
+
+      
+      trans.CONFIRMATION_EXPLANATION =
+          " You cannot edit or delete it after you have done so. ";
+    </script>
+
+    
+    
+<style>
+    .sticky-container{
+    /*background-color: #333;*/
+    padding: 0px;
+    margin: 0px;
+    position: fixed;
+    right: -119px;
+    top:130px;
+    width: 200px;
+    z-index: 1
+  }
+  .sticky li{
+    list-style-type: none;
+    color: #000000;
+    height: 43px;
+    padding: 0px;
+    margin: 0px 0px 1px 0px;
+    -webkit-transition:all 0.25s ease-in-out;
+    -moz-transition:all 0.25s ease-in-out;
+    -o-transition:all 0.25s ease-in-out;
+    transition:all 0.25s ease-in-out;
+    cursor: pointer;
+    filter: white(100%);
+              /*  filter: ; */
+    -webkit-filter: white(100%);
+
+  }
+  .sticky li:hover{
+    margin-left: -115px;
+  }
+  .sticky li img{
+    float: left;
+    margin: 5px 15px;
+    margin-right: 10px;
+
+  }
+  .sticky li p{
+    padding: 0px;
+    margin: 0px;
+    text-transform: uppercase;
+    line-height: 43px;
+  }
+</style>
+
+ </head><body data-gcb-page-locale="en_US"><div class="sticky-container">
+    <ul class="sticky">
+      <li>
+        <a href="https://www.facebook.com/NPTELNoc/" target="_blank"><img title="Facebook" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/fb1.png" width="32" height="32">
+        <p>Facebook</p></a>
+      </li>
+      <li>
+        <a href="https://twitter.com/nptelindia" target="_blank"><img title="Twitter" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/tw1.png" width="32" height="32">
+        <p>Twitter</p></a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/user/nptelhrd" target="_blank"><img title="Youtube" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/yt.png" width="32" height="32">
+        <p>Youtube</p></a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/nptel/" target="_blank"><img title="Linkedin" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/li1.png" width="32" height="32">
+        <p>Linkedin</p></a>
+      </li>
+      <li>
+        <a href="https://plus.google.com/u/0/+nptelhrd" target="_blank"><img title="Google plus" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/g1.png" width="32" height="32">
+        <p>Google plus</p></a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="icon" href="https://storage.googleapis.com/static-prod-v11/assets/img/favicon.ico">
+  <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/main.css" rel="stylesheet" type="text/css">
+  <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/nptel.css" rel="stylesheet" type="text/css">
+  <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/chosen.css" rel="stylesheet" type="text/css">
+  <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/minimal.css" rel="stylesheet" type="text/css" media="only screen and (max-device-width: 1024px)">
+
+  <!-- jQuery should be imported first -->
+  <script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/jquery.js"></script>
+  <script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/chosen.js"></script>
+  <script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/butterbar.js"></script>
+  <link rel="stylesheet" type="text/css" href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/butterbar.css" media="screen">
+  <script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/main.js"></script>
+
+  <script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/jsapi" type="text/javascript"></script>
+  <script type="text/javascript">
+    function addScript(src, callback) {
+      var r = false;
+      var existed = true;
+      var element = document.getElementById(src);
+      if (!element) {
+        existed = false;
+        element = document.createElement('script');
+        element.src = src;
+        element.type = 'text/javascript';
+        element.setAttribute('id', src);
+      }
+      if (callback != null) {
+        element.onload = element.onreadystatechagne = function() {
+          if (!r && (!this.readyState || this.readyState == 'complete')) {
+            r = true;
+            callback();
+          }
+        }
+      }
+      if (!existed) document.body.appendChild(element);
+    }
+    function getStudentProgress() {
+      
+      ajax_server.get_progress();
+      
+    }
+    function prettyfyCode() {
+      prettyPrint();
+    }
+    function showButterBar() {
+      
+      var regConfirmationMsg = "Thank you for registering for the course. Click the Announcements tab for important information.";
+      if(window.location.hash == '#registration_confirmation') {
+        cbShowMsg(regConfirmationMsg);
+        setTimeout(function() {cbHideMsg();}, 20000);
+      }
+      
+      var regClosedMsg = "Registrations for this course are not open.";
+      if(window.location.hash == '#registration_closed') {
+        cbShowMsg(regClosedMsg);
+        setTimeout(function() {cbHideMsg();}, 20000);
+      }
+    }
+    function loadOtherJs(callback) {
+      var c = getStudentProgress;
+      if (null != callback) {
+        c = function() {
+           callback();
+           getStudentProgress();
+        }
+      }
+      addScript('https://storage.googleapis.com/static-prod-v11/assets/lib/google-code-prettify/prettify.js', prettyfyCode);
+      addScript('https://storage.googleapis.com/static-prod-v11/modules/nptel/assets/js/activity-generic-1.3.js', null);
+      addScript('https://storage.googleapis.com/static-prod-v11/modules/nptel/assets/js/main.js', c);
+    }
+    function downloadJsAtLoad() { loadOtherJs(null); }
+    google.setOnLoadCallback(downloadJsAtLoad);
+  </script>
+ 
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Course",
+      "@id": "https://onlinecourses.nptel.ac.in/noc19_cs12/",
+      "name": "Data Base Management System",
+      "description": "
+&lt;span style=&#34;color: rgb(0, 0, 191);&#34;&gt;&lt;b&gt;ABOUT THE COURSE
+&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;div style=&#34;text-align: justify;&#34; class=&#34;yui-wk-div&#34;&gt;&lt;span style=&#34;line-height: 1.22;&#34;&gt;Databases form the backbone of all major applications today – tightly or loosely coupled, intranet or internet based, financial, social, administrative, and so on. Structured Database Management Systems (DBMS) based on relational and other models have long formed the basis for such databases. Consequently, Oracle, Microsoft SQL Server, Sybase etc. have emerged as leading commercial systems while MySQL, PostgreSQL etc. lead in open source and free domain. While DBMS’s differ in details, they share a common set of models, design paradigms and a Structured Query Language (SQL). 
+
+In this background the course would examine data structures, file organizations, concepts and principles of DBMS’s, data analysis, database design, data modeling, database management, data &amp;amp; query optimization, and database implementation. More specifically, the course introduces relational data models; entity-relationship modeling, SQL, data normalization, and database design. It would also introduce query coding practices using MySQL (or any other open system) through various assignments. Design of simple multi-tier client/server architectures based and Web-based database applications will also be introduced.&lt;/span&gt;&lt;/div&gt;&lt;b style=&#34;color: rgb(0, 0, 191);&#34;&gt;INTENDED AUDIENCE:&lt;/b&gt;&lt;br&gt;&lt;div style=&#34;text-align: justify;&#34; class=&#34;yui-wk-div&#34;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&#34;font-size:10.0pt;line-height:107%;
+font-family:&amp;quot;Arial&amp;quot;,sans-serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA&#34;&gt;Students from all disciplines can enroll for this course.&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;b style=&#34;line-height: 15.86px; color: rgb(0, 0, 191);&#34;&gt;PRE-REQUISTES:&lt;/b&gt;&lt;br style=&#34;line-height: 15.86px;&#34;&gt;&lt;div class=&#34;yui-wk-div&#34; style=&#34;line-height: 15.86px; text-align: justify;&#34;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&#34;font-size:10.0pt;line-height:107%;
+font-family:&amp;quot;Arial&amp;quot;,sans-serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA&#34;&gt;Knowledge of Programming&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-size:10.0pt;line-height:107%;
+font-family:&amp;quot;Arial&amp;quot;,sans-serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA&#34;&gt;Data Structure and Algorithms&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;b style=&#34;color: rgb(0, 0, 191);&#34;&gt;CORE/ELECTIVE:&amp;nbsp;&lt;/b&gt;&lt;span style=&#34;font-size:10.0pt;line-height:107%;
+font-family:&amp;quot;Arial&amp;quot;,sans-serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA&#34;&gt;Core / Elective Course. DBMS is core in some curriculum and elective for
+the rest&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;b style=&#34;color: rgb(0, 0, 191);&#34;&gt;UG/PG :&lt;/b&gt;&amp;nbsp;&lt;span style=&#34;font-size:10.0pt;line-height:107%;
+font-family:&amp;quot;Arial&amp;quot;,sans-serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA&#34;&gt;UG / PG. This is a first level
+course. It can be taken at PG level if not covered at UG level.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;b style=&#34;color: rgb(0, 0, 191);&#34;&gt;INDUSTRY SUPPORT :&amp;nbsp;&lt;br&gt;&lt;/b&gt;&lt;span style=&#34;text-align: justify; font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;&lt;span style=&#34;font-size: 10pt; line-height: 107%;&#34;&gt;DBMS is so fundamental that all companies dealing with systems as well
+as application development (including web, IoT, embedded systems) have a need
+for the same.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;text-align: justify; font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;These include –&amp;nbsp;&lt;/span&gt;&lt;div style=&#34;text-align: justify;&#34; class=&#34;yui-wk-div&#34;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;Microsoft&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;Samsung&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;Xerox&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;Yahoo&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;Google&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;IBM&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;TCS&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;Infosys&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;Amazon&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;Flipkart, etc.&lt;/span&gt;&lt;span style=&#34;font-family: Arial, sans-serif; font-size: 10pt; line-height: 107%;&#34;&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;",
+      "provider": {
+        "@type":"Organization",
+        "name":"National Programme on Technology Enhanced Learning",
+        "sameAs":"http://nptel.iitm.ac.in"
+      },
+      "grantsCredential": "False",
+      "isAccessibleForFree" : "",
+
+      "hasCourseInstance" : [
+      {
+        "inLanguage" : "en",
+        "audioLanguage" : ["en"],
+        "startDate" : "2019-02-25T00:00:00.000000Z"
+        }
+      ],
+      
+        "image" : "/modules/nptel/assets/img/nptel-logo.png"
+      
+    }
+  </script>
+
+    <script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/in_place_lesson_editor.js"></script>
+    <link rel="stylesheet" href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/in_place_lesson_editor.css">
+    <link rel="stylesheet" href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/material-design-iconic-font.css">
+  
+
+    
+
+    
+
+    <script>
+      var eventXsrfToken = '1552325346/-iv0VTJfc_MeJl5Rwhf9-Q==';
+      
+        var gcbCanRecordStudentEvents = true;
+      
+
+      
+        var transientStudent = false;
+      
+    </script>
+
+    
+      <script type="text/javascript" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/plusone.js" gapi_processed="true"></script>
+    
+
+    <script>
+      function gcb_edit_hook_point(key) {
+        window.location=('dashboard?action=edit_html_hook&key=' +
+            encodeURIComponent(key));
+      }
+      $(function() {
+        // TODO(nretallack): This duplicates code in
+        // modules/dashboard/resources/js/view.js.
+        function parseJson(s) {
+          var xssiPrefix = ")]}'";
+          return JSON.parse(s.replace(xssiPrefix, ''));
+        }
+
+        $("#locale-select").change(function() {
+          var localeSelect = $("#locale-select");
+          var request = JSON.stringify({
+            xsrf_token: localeSelect.data("xsrf-token"),
+            payload: {
+              selected: localeSelect.val()
+            }
+          });
+          $.ajax({
+            url: "rest/locale",
+            type: "POST",
+            data: {request: request},
+            dataType: "text",
+            success: function(data) {
+              data = parseJson(data);
+              if (data.status == 200) {
+                window.location.reload();
+              }
+            }
+          });
+        });
+      });
+    </script>
+
+    
+      
+      
+    
+
+    <div class="gcb-html-hook" id="base-before-head-tag-ends"><!-- base.before_head_tag_ends --></div>
+  
+
+  
+    <div class="invisiblePopupDiv" id="termsDiv">
+       <div class="gcb-pull-right">
+       <a class="closeXButton" onclick='hidePopupDiv("termsDiv"); return false;'>X</a>
+       </div>
+       <iframe src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/terms.html" class="popupIframe"></iframe>
+      </div>
+    <div class="invisiblePopupDiv" id="honorDiv">
+       <div class="gcb-pull-right">
+       <a class="closeXButton" onclick='hidePopupDiv("honorDiv"); return false;'>X</a>
+       </div>
+       <iframe src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/honor_code.html" class="popupIframe"></iframe>
+      </div>
+    <div class="invisiblePopupDiv" id="faqDiv">
+       <div class="gcb-pull-right">
+       <a class="closeXButton" onclick='hidePopupDiv("faqDiv"); return false;'>X</a>
+       </div>
+       <iframe src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/faq.html" class="popupIframe"></iframe>
+    </div>
+
+    <div class="gcb-html-hook" id="base-after-body-tag-begins"><!-- base.after_body_tag_begins --></div>
+
+    
+      <script>
+        // Course-Builder specific setup for Google Tag Manager.  Iff
+        // Tag Managers is enabled, the values in the dataLayer list of
+        // dicts is made available to Tag Manager macros.
+        dataLayer = [{
+          'course_title': 'Data Base Management System',
+          'event': 'default',  // Explicit value meaning not-really-set.
+          }];
+
+        function gcbSetPageInfo(dict) {
+          dataLayer.push(dict);
+        }
+
+        // Invoke page-specific block so that any calls to gcbReportPageInfo()
+        // are made before we hit the Tag Manager call, below.
+        
+  if ('gcbSetPageInfo' in window) {
+    gcbSetPageInfo({
+      'page_type': 'assessment',
+      'unit_id': '5',
+      
+      
+        'assessment_id': '103',
+      
+    });
+  }
+
+      </script>
+
+      
+    
+
+    <!-- ButterBar -->
+    <div class="gcb-butterbar-container">
+      <div id="gcb-butterbar-top" class="gcb-butterbar" style="margin-top:50px" aria-live="polite">
+        <p id="gcb-butterbar-message"></p>
+        <a id="gcb-butterbar-close">X</a>
+      </div>
+    </div>
+
+    <!-- logo bar -->
+     <div id="gcb-header" role="banner">
+    <div class="gcb-header-aux">
+      <div class="gcb-aux clearfix">
+        <p class="gcb-course-image">
+          <a id="gcb-header-logo" href="https://onlinecourses.nptel.ac.in/noc19_cs12/">
+            
+              <img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/nptel-logo.png" alt="NPTEL">
+            
+          </a>
+        </p>
+
+     
+       <div class="gcb-username" onmouseover="showMenu()" onmouseout="hideMenu()">
+          ravilumarcs@gmail.com <small>▼</small>
+          
+          <div class="gcb-profile" id="logout-div" style="display: none;">
+            
+              
+                <a href="https://onlinecourses.nptel.ac.in/profile">Profile</a>
+                <a href="https://onlinecourses.nptel.ac.in/mycourses">My Courses</a>
+              
+            
+            
+            
+            
+            
+            <a href="https://onlinecourses.nptel.ac.in/_ah/logout?continue=https://accounts.google.com/Logout%3Fcontinue%3Dhttps://appengine.google.com/_ah/logout%253Fcontinue%253Dhttps://google.com/url%25253Fsa%25253DD%252526q%25253Dhttps://onlinecourses.nptel.ac.in/noc19_cs12%252526ust%25253D1552411746014163%252526usg%25253DAFQjCNGQXUvqPuEE0utdO5UC0Ux5Z9AzNg%26service%3Dah">
+              
+              Logout
+            </a>
+          </div>
+       </div>
+     
+         </div>
+      </div>
+    </div>
+
+    
+  <!-- nav bar -->
+  <div class="gcb-nav gcb-complex" id="gcb-nav-x">
+    <div class="gcb-aux">
+      <a class="gcb-nav-course-title" href="https://onlinecourses.nptel.ac.in/">Courses</a>
+      <span class="gcb-nav-course-title">»</span>
+      <a class="gcb-nav-course-title" href="https://onlinecourses.nptel.ac.in/noc19_cs12/course">Data Base Management System</a>
+      <div class="gcb-pull-right"><ul class="clearfix">
+
+        <!-- left-aligned links in order -->
+        <div class="gcb-html-hook" id="base-after-navbar-begins"><!-- base.after_navbar_begins --></div>
+        <li>
+          
+          <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/announcements">Announcements</a>
+        </li>
+        
+        <li class="active">
+          
+          <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/course">Course</a>
+        </li>
+        
+        
+          <li>
+            
+            <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/forum">Ask a Question</a>
+          </li>
+        
+        
+          <li>
+            
+            <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/student/home">Progress</a>
+          </li>
+         
+        
+              
+              
+        
+        
+        
+          <li>
+            
+              
+              
+              <a href="http://nptel.ac.in/noc/faqnew.php">FAQ</a>
+            
+          </li>
+        
+
+        <!-- right-aligned links are in order -->
+        
+        
+          
+            <!-- <li class="gcb-pull-right">
+              
+              <a href="/">My Courses</a>
+            </li> -->
+          
+        
+        <div class="gcb-html-hook" id="base-before-navbar-ends"><!-- base.before_navbar_ends --></div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <!-- top section -->
+
+   <div id="gcb-main-body" class="clearfix">
+    <div class="is-wrapper">
+      <div class="gcb-aux">
+        
+
+        <div class="gcb-html-hook" id="base-after-top-content-ends"><!-- base.after_top_content_ends --></div>
+
+        <!-- main section -->
+        
+
+<script>
+  var questionData = {};
+  questionData.scored = true;
+</script>
+
+
+<div id="gcb-main">
+  <div id="gcb-left-nav-toggle">
+    <a href="" class="gcb-button">
+      <span class="show">
+        
+        Show Syllabus
+      </span>
+      <span class="hide">
+        
+        Hide Syllabus
+      </span>
+    </a>
+  </div>
+  <script>
+    $('#gcb-left-nav-toggle a').click(function(){
+        if ($(this).hasClass('show')) {
+            $(this).removeClass('show');
+            $('#gcb-nav-y').hide();
+            $('.gcb-unit-header').show('fast');
+            $('#gcb-nav-y + .gcb-article').show('fast');
+        } else {
+            $(this).addClass('show');
+            $('#gcb-nav-y').show('fast');
+            $('.gcb-unit-header').hide();
+            $('#gcb-nav-y + .gcb-article').hide();
+        }
+        return false;
+    });
+  </script>
+
+  <ul id="gcb-breadcrumb" class="gcb-breadcrumb">
+    
+    <li><a href="https://onlinecourses.nptel.ac.in/noc19_cs12/course">Course</a></li>
+    <li><a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=5">
+      Unit 3</a></li>
+    
+  </ul>
+
+  <div id="gcb-unit-header">
+    <h1 class="gcb-unit-header">
+      Unit 3 - Week 1
+      
+    </h1>
+  </div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="gcb-nav" id="gcb-nav-left" role="navigation">
+
+  
+  <div class="gcb-button-toolbar">
+    <a id="exam-registeration-button" class="gcb-button gcb-button-small" href="http://nptelonlinecourses.iitm.ac.in/" role="button">
+       Register for Certification exam
+    </a>
+  </div>
+  
+
+  <div class="gcb-aside">
+  <h2>Course outline</h2>
+    
+      
+        
+          <div class="unit_navbar" id="unit_navbar_1">
+  <div class="unit_heading" id="unit_heading_1" onclick='toggleSubUnitNavBar("subunit_navbar_1")'>
+     How to access the portal </div>
+    
+      <ul class="subunit_navbar_other" id="subunit_navbar_1">
+    
+            
+              
+      
+        
+          
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=1&amp;lesson=2">How to access the home page? </a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-2">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=1&amp;lesson=3">How to access the course page? </a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-3">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=1&amp;lesson=4">How to access the MCQ, MSQ and Programming assignments?</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-4">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+          
+          
+        
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+            
+          </ul></div>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <div class="unit_navbar" id="unit_navbar_99">
+  <div class="unit_heading" id="unit_heading_99" onclick='toggleSubUnitNavBar("subunit_navbar_99")'>
+     Week - 0 </div>
+    
+      <ul class="subunit_navbar_other" id="subunit_navbar_99">
+    
+            
+              
+      
+  
+      
+  
+      
+        
+          
+          
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      
+        <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/assessment?name=100">Quiz : Week 0 Assignment 0</a>
+      
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-100">
+</div>
+      
+    </div></li>
+  
+                
+            
+          
+        
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+            
+          </ul></div>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <div class="unit_navbar" id="unit_navbar_5">
+  <div class="unit_heading" id="unit_heading_5" onclick='toggleSubUnitNavBar("subunit_navbar_5")'>
+     Week 1 </div>
+    
+      <ul class="subunit_navbar_current" id="subunit_navbar_5">
+    
+            
+              
+      
+  
+      
+  
+      
+  
+      
+  
+      
+        
+          
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=5&amp;lesson=6">Lecture 1 : Course Overview</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-6">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=5&amp;lesson=7">Lecture 2 : Introduction to DBMS/1</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-7">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=5&amp;lesson=8">Lecture 3 : Introduction to DBMS/2</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-8">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=5&amp;lesson=9">Lecture 4 : Introduction to Relational Model/1</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-9">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=5&amp;lesson=10">Lecture 5 : Introduction to Relational Model/2</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-10">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=5&amp;lesson=11">Week 1 : Lecture Material</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-11">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=5&amp;lesson=89">Feedback for Week 1</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-89">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+          
+          
+        
+          
+          
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      
+        <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/assessment?name=103">Quiz : Week 1 Assignment 1</a>
+      
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/completed.png" alt="Completed" title="Completed" class="gcb-progress-icon" id="progress-state-103">
+</div>
+      
+    </div></li>
+  
+                
+            
+          
+        
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+            
+          </ul></div>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <div class="unit_navbar" id="unit_navbar_13">
+  <div class="unit_heading" id="unit_heading_13" onclick='toggleSubUnitNavBar("subunit_navbar_13")'>
+     Week 2 </div>
+    
+      <ul class="subunit_navbar_other" id="subunit_navbar_13">
+    
+            
+              
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+        
+          
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=13&amp;lesson=14">Lecture 6 : Introduction to SQL/1</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/completed.png" alt="Completed" title="Completed" class="gcb-progress-icon" id="progress-state-html-14">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=13&amp;lesson=15">Lecture 7 : Introduction to SQL/2</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-15">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=13&amp;lesson=16">Lecture 8 : Introduction to SQL/3</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-16">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=13&amp;lesson=17">Lecture 9 : Intermediate SQL/1</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-17">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=13&amp;lesson=18">Lecture 10 : Intermediate SQL/2</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-18">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=13&amp;lesson=19">Week 2 : Lecture Material</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-19">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+          
+          
+        
+          
+          
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      
+        <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/assessment?name=104">Quiz : Week 2 Assignment 2</a>
+      
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/completed.png" alt="Completed" title="Completed" class="gcb-progress-icon" id="progress-state-104">
+</div>
+      
+    </div></li>
+  
+                
+            
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=13&amp;lesson=90">Feedback for Week 2</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-90">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+          
+          
+        
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+            
+          </ul></div>
+        
+      
+    
+      
+        
+          <div class="unit_navbar" id="unit_navbar_21">
+  <div class="unit_heading" id="unit_heading_21" onclick='toggleSubUnitNavBar("subunit_navbar_21")'>
+     Week 3 </div>
+    
+      <ul class="subunit_navbar_other" id="subunit_navbar_21">
+    
+            
+              
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+        
+          
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=21&amp;lesson=22">Lecture 11 : Advanced SQL</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-22">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=21&amp;lesson=23">Lecture 12 : Formal Relational Query Languages</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-23">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=21&amp;lesson=24">Lecture 13 : Entity-Relationship Model/1</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-24">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=21&amp;lesson=25">Lecture 14 : Entity-Relationship Model/2</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-25">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=21&amp;lesson=26">Lecture 15 : Entity-Relationship Model/3</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-26">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+    <li class="subunit_other">
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=21&amp;lesson=27">Week 3 Lecture Material</a>
+      
+        <div class="gcb-progress-icon-holder"><img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/not_started.png" alt="Not Started" title="Not Started" class="gcb-progress-icon" id="progress-state-html-27">
+</div>
+      
+    </div></li>
+    
+  
+                
+            
+                
+            
+          
+          
+        
+          
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                  
+                
+            
+          
+          
+        
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+            
+          </ul></div>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    &nbsp;
+  </div>
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+
+</div>
+  
+
+  <div id="gcb-main-article" class="gcb-article tab-content" role="main">
+    <div class="gcb-html-hook" id="unit-after-content-begins"></div>
+
+    
+
+      
+        <div class="gcb-aside gcb-button-box">
+          
+  
+
+
+<div class="gcb-assessment-contents">
+  <h1>
+    Week 1 Assignment 1
+    
+
+  </h1>
+
+  
+
+    
+
+    <script>
+      assessmentXsrfToken = '1552325346/Mkk7lbRlbi1BIxmIZRcFKg==';
+
+      var assessmentGlobals = {};
+      var enable_negative_marking = JSON.parse("false");
+      assessmentGlobals.isReviewForm = false;
+      assessmentGlobals.grader = 'auto';
+      
+    </script>
+
+    <div class="assessment-top-info">
+    
+      
+        <strong>
+          
+          Due date for this assignment: 
+        </strong>
+        2019-03-13, 23:59 IST.
+      
+      
+    
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div id="assessmentContents"></div>
+
+    
+        
+       
+       <div style="color:green;">
+         <strong>
+         Your last recorded submission was on 2019-03-08, 11:55 IST
+         </strong>
+       </div>
+        
+       
+<div data-xsrf-token="1552325346/Mkk7lbRlbi1BIxmIZRcFKg==" data-unit-id="103" data-question-batch-id="A103" data-scored="True">
+  <script>
+    var questionData = questionData || {};
+    questionData.xsrfToken = '1552325346/Mkk7lbRlbi1BIxmIZRcFKg==';
+    
+      questionData.savedAnswers = questionData.savedAnswers || {};
+      $.extend(questionData.savedAnswers,
+          JSON.parse("{\"containedTypes\": {}, \"cN6iVPso0E2M\": {\"cN6iVPso0E2M.9.4787062884532224\": [true, false, true, false], \"cN6iVPso0E2M.3.5093009108500480\": [false, false, false, true], \"cN6iVPso0E2M.7.5778668693487616\": [false, false, false, true], \"cN6iVPso0E2M.0.6233489607229440\": [false, true, false, false], \"cN6iVPso0E2M.4.6241583271772160\": [false, false, true, false], \"cN6iVPso0E2M.8.6645886528520192\": [false, true, false, false], \"cN6iVPso0E2M.2.6667816094662656\": [false, false, false, true], \"cN6iVPso0E2M.6.5910825894150144\": [false, false, true, false], \"cN6iVPso0E2M.1.4921621575892992\": [true, false, false, false], \"cN6iVPso0E2M.5.6539596154273792\": [false, false, true, false]}, \"quids\": {}, \"answers\": {}, \"percentScore\": 0, \"version\": \"1.5\", \"rawScore\": 0, \"individualScores\": {\"cN6iVPso0E2M\": [2.0, 2.0, 0.0, 0.0, 0.0, 1.0, 2.0, 2.0, 2.0, 2.0]}, \"totalWeight\": 0}"));
+    
+  </script>
+  <div class="gcb-assessment-body">
+    <div><link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M'] = JSON.parse(window.atob("eyJjTjZpVlBzbzBFMk0uOS40Nzg3MDYyODg0NTMyMjI0IjogeyJxdWVzdGlvbiI6IDQ3ODcwNjI4ODQ1MzIyMjQsICJ3ZWlnaHQiOiAyLjB9LCAiY042aVZQc28wRTJNLjMuNTA5MzAwOTEwODUwMDQ4MCI6IHsicXVlc3Rpb24iOiA1MDkzMDA5MTA4NTAwNDgwLCAid2VpZ2h0IjogMi4wfSwgImNONmlWUHNvMEUyTS4xLjQ5MjE2MjE1NzU4OTI5OTIiOiB7InF1ZXN0aW9uIjogNDkyMTYyMTU3NTg5Mjk5MiwgIndlaWdodCI6IDIuMH0sICJjTjZpVlBzbzBFMk0uMC42MjMzNDg5NjA3MjI5NDQwIjogeyJxdWVzdGlvbiI6IDYyMzM0ODk2MDcyMjk0NDAsICJ3ZWlnaHQiOiAyLjB9LCAiY042aVZQc28wRTJNLjQuNjI0MTU4MzI3MTc3MjE2MCI6IHsicXVlc3Rpb24iOiA2MjQxNTgzMjcxNzcyMTYwLCAid2VpZ2h0IjogMi4wfSwgImNONmlWUHNvMEUyTS44LjY2NDU4ODY1Mjg1MjAxOTIiOiB7InF1ZXN0aW9uIjogNjY0NTg4NjUyODUyMDE5MiwgIndlaWdodCI6IDIuMH0sICJjTjZpVlBzbzBFMk0uMi42NjY3ODE2MDk0NjYyNjU2IjogeyJxdWVzdGlvbiI6IDY2Njc4MTYwOTQ2NjI2NTYsICJ3ZWlnaHQiOiAyLjB9LCAiY042aVZQc28wRTJNLjcuNTc3ODY2ODY5MzQ4NzYxNiI6IHsicXVlc3Rpb24iOiA1Nzc4NjY4NjkzNDg3NjE2LCAid2VpZ2h0IjogMi4wfSwgImNONmlWUHNvMEUyTS42LjU5MTA4MjU4OTQxNTAxNDQiOiB7InF1ZXN0aW9uIjogNTkxMDgyNTg5NDE1MDE0NCwgIndlaWdodCI6IDIuMH0sICJjTjZpVlBzbzBFMk0uNS42NTM5NTk2MTU0MjczNzkyIjogeyJxdWVzdGlvbiI6IDY1Mzk1OTYxNTQyNzM3OTIsICJ3ZWlnaHQiOiAyLjB9fQ=="));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+  <div class="qt-question-group" id="cN6iVPso0E2M">
+    <div class="qt-introduction">
+      
+    </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.0.6233489607229440'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDYyMzM0ODk2MDcyMjk0NDAsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.0.6233489607229440">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q1.png" style="width: 516px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.0.6233489607229440.0" name="cN6iVPso0E2M.0.6233489607229440" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.0.6233489607229440.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q1A.png" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.0.6233489607229440.1" name="cN6iVPso0E2M.0.6233489607229440" onclick="clearSelection(this)" type="radio" checked="checked">
+              <label for="cN6iVPso0E2M.0.6233489607229440.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q1B.png" style="width: 548px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.0.6233489607229440.2" name="cN6iVPso0E2M.0.6233489607229440" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.0.6233489607229440.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q1C.png" style="width: 555px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.0.6233489607229440.3" name="cN6iVPso0E2M.0.6233489607229440" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.0.6233489607229440.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q1D.png" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.1.4921621575892992'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDQ5MjE2MjE1NzU4OTI5OTIsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.1.4921621575892992">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q2.jpg" style="width: 609px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.1.4921621575892992.0" name="cN6iVPso0E2M.1.4921621575892992" onclick="clearSelection(this)" type="radio" checked="checked">
+              <label for="cN6iVPso0E2M.1.4921621575892992.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q2a.JPG" style="width: 157px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.1.4921621575892992.1" name="cN6iVPso0E2M.1.4921621575892992" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.1.4921621575892992.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q2b.JPG" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.1.4921621575892992.2" name="cN6iVPso0E2M.1.4921621575892992" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.1.4921621575892992.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q2c.JPG" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.1.4921621575892992.3" name="cN6iVPso0E2M.1.4921621575892992" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.1.4921621575892992.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q2d.JPG" style="width: 133px;" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.2.6667816094662656'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDY2Njc4MTYwOTQ2NjI2NTYsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.2.6667816094662656">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q3.png" style="width: 600px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.2.6667816094662656.0" name="cN6iVPso0E2M.2.6667816094662656" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.2.6667816094662656.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q3a.png" style="width: 673px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.2.6667816094662656.1" name="cN6iVPso0E2M.2.6667816094662656" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.2.6667816094662656.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q3b.png" style="width: 699px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.2.6667816094662656.2" name="cN6iVPso0E2M.2.6667816094662656" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.2.6667816094662656.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q3c.png" style="width: 466px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.2.6667816094662656.3" name="cN6iVPso0E2M.2.6667816094662656" onclick="clearSelection(this)" type="radio" checked="checked">
+              <label for="cN6iVPso0E2M.2.6667816094662656.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q3d.png" style="width: 343px;" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.3.5093009108500480'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDUwOTMwMDkxMDg1MDA0ODAsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.3.5093009108500480">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q4.png" style="width: 469px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.3.5093009108500480.0" name="cN6iVPso0E2M.3.5093009108500480" onclick="clearSelection(this)" type="checkbox">
+              <label for="cN6iVPso0E2M.3.5093009108500480.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q4a.png" style="width: 612px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.3.5093009108500480.1" name="cN6iVPso0E2M.3.5093009108500480" onclick="clearSelection(this)" type="checkbox">
+              <label for="cN6iVPso0E2M.3.5093009108500480.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q4b.png" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.3.5093009108500480.2" name="cN6iVPso0E2M.3.5093009108500480" onclick="clearSelection(this)" type="checkbox">
+              <label for="cN6iVPso0E2M.3.5093009108500480.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q4c.png" style="width: 383px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.3.5093009108500480.3" name="cN6iVPso0E2M.3.5093009108500480" onclick="clearSelection(this)" type="checkbox" checked="checked">
+              <label for="cN6iVPso0E2M.3.5093009108500480.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q4d.png" style="width: 378px;" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.4.6241583271772160'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDYyNDE1ODMyNzE3NzIxNjAsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.4.6241583271772160">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q5.JPG" style="width: 689px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.4.6241583271772160.0" name="cN6iVPso0E2M.4.6241583271772160" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.4.6241583271772160.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q5a.JPG" style="width: 126px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.4.6241583271772160.1" name="cN6iVPso0E2M.4.6241583271772160" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.4.6241583271772160.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q5b.JPG" style="width: 152px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.4.6241583271772160.2" name="cN6iVPso0E2M.4.6241583271772160" onclick="clearSelection(this)" type="radio" checked="checked">
+              <label for="cN6iVPso0E2M.4.6241583271772160.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q5c.JPG" style="width: 140px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.4.6241583271772160.3" name="cN6iVPso0E2M.4.6241583271772160" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.4.6241583271772160.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q5d.JPG" style="width: 140px;" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.5.6539596154273792'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDY1Mzk1OTYxNTQyNzM3OTIsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.5.6539596154273792">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q6.png" style="width: 566px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.5.6539596154273792.0" name="cN6iVPso0E2M.5.6539596154273792" onclick="clearSelection(this)" type="checkbox">
+              <label for="cN6iVPso0E2M.5.6539596154273792.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q6a.png" style="width: 172px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.5.6539596154273792.1" name="cN6iVPso0E2M.5.6539596154273792" onclick="clearSelection(this)" type="checkbox">
+              <label for="cN6iVPso0E2M.5.6539596154273792.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q6b.png" style="width: 375px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.5.6539596154273792.2" name="cN6iVPso0E2M.5.6539596154273792" onclick="clearSelection(this)" type="checkbox" checked="checked">
+              <label for="cN6iVPso0E2M.5.6539596154273792.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q6c.png" style="width: 270px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.5.6539596154273792.3" name="cN6iVPso0E2M.5.6539596154273792" onclick="clearSelection(this)" type="checkbox">
+              <label for="cN6iVPso0E2M.5.6539596154273792.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q6d.png" style="width: 196px;" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.6.5910825894150144'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDU5MTA4MjU4OTQxNTAxNDQsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.6.5910825894150144">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q7.JPG" style="width: 681px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.6.5910825894150144.0" name="cN6iVPso0E2M.6.5910825894150144" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.6.5910825894150144.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q7a.JPG" style="width: 123px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.6.5910825894150144.1" name="cN6iVPso0E2M.6.5910825894150144" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.6.5910825894150144.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q7b.JPG" style="width: 190px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.6.5910825894150144.2" name="cN6iVPso0E2M.6.5910825894150144" onclick="clearSelection(this)" type="radio" checked="checked">
+              <label for="cN6iVPso0E2M.6.5910825894150144.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q7c.JPG" style="width: 187px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.6.5910825894150144.3" name="cN6iVPso0E2M.6.5910825894150144" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.6.5910825894150144.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q7d.JPG" style="width: 201px;" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.7.5778668693487616'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDU3Nzg2Njg2OTM0ODc2MTYsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.7.5778668693487616">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q8.JPG" style="width: 694px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.7.5778668693487616.0" name="cN6iVPso0E2M.7.5778668693487616" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.7.5778668693487616.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q8a.JPG" style="width: 166px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.7.5778668693487616.1" name="cN6iVPso0E2M.7.5778668693487616" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.7.5778668693487616.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q8b.JPG" style="width: 237px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.7.5778668693487616.2" name="cN6iVPso0E2M.7.5778668693487616" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.7.5778668693487616.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q8c.JPG" style="width: 142px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.7.5778668693487616.3" name="cN6iVPso0E2M.7.5778668693487616" onclick="clearSelection(this)" type="radio" checked="checked">
+              <label for="cN6iVPso0E2M.7.5778668693487616.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q8d.JPG" style="width: 298px;" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.8.6645886528520192'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDY2NDU4ODY1Mjg1MjAxOTIsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.8.6645886528520192">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q9.png" style="width: 432px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.8.6645886528520192.0" name="cN6iVPso0E2M.8.6645886528520192" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.8.6645886528520192.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q9a.png" style="width: 695px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.8.6645886528520192.1" name="cN6iVPso0E2M.8.6645886528520192" onclick="clearSelection(this)" type="radio" checked="checked">
+              <label for="cN6iVPso0E2M.8.6645886528520192.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q9b.png" style="width: 697px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.8.6645886528520192.2" name="cN6iVPso0E2M.8.6645886528520192" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.8.6645886528520192.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q9c.png" style="width: 609px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.8.6645886528520192.3" name="cN6iVPso0E2M.8.6645886528520192" onclick="clearSelection(this)" type="radio">
+              <label for="cN6iVPso0E2M.8.6645886528520192.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/w1q9d.png" style="width: 609px;" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+          <link href="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/questions.css" rel="stylesheet" type="text/css">
+<script>
+    questionData['cN6iVPso0E2M.9.4787062884532224'] = JSON.parse(window.atob("eyJkZWZhdWx0RmVlZGJhY2siOiAiIiwgIndlaWdodCI6IDIuMCwgInNob3dBbnN3ZXJXaGVuSW5jb3JyZWN0IjogZmFsc2UsICJjaG9pY2VzIjogW10sICJwZXJtdXRlQ2hvaWNlcyI6IGZhbHNlLCAicXVpZCI6IDQ3ODcwNjI4ODQ1MzIyMjQsICJhbGxPck5vdGhpbmdHcmFkaW5nIjogZmFsc2V9"));
+
+
+    var assessmentTagMessages = {};
+
+    
+    assessmentTagMessages.correct = "Correct. ";
+    
+    assessmentTagMessages.incorrect = "Incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrect = "Partially Correct. ";
+
+    
+    assessmentTagMessages.correctAnswer = " Yes, the answer is correct. ";
+    
+    assessmentTagMessages.incorrectAnswer = " No, the answer is incorrect. ";
+    
+    assessmentTagMessages.partiallyCorrectAnswer = " The answer is partially correct. ";
+
+    
+    assessmentTagMessages.correctAnswerHeading = "The correct answer is:";
+    
+    assessmentTagMessages.targetedFeedbackHeading = "Targeted Feedback:";
+    
+    assessmentTagMessages.feedbackHeading = "Feedback:";
+
+    
+    assessmentTagMessages.yourScoreIs = " Your score is: ";
+  </script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading_lib.js"></script>
+<script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/grading.js"></script>
+<noscript>
+    &lt;div class=&#39;qt-warning&#39;&gt;
+        
+         JavaScript should be enabled to grade this question. 
+    &lt;/div&gt;
+</noscript>
+
+
+
+
+<script>
+//Function to allow user to deselect the assignment question
+// @todo Mrunal : When we submit the question once if we revisit that question again we have to double click on option to
+// deselect it ,if it is already selected.This is a minor issue and will be resolved
+function clearSelection(radio) {
+    if (radio.getAttribute("data-checked")) {
+        radio.checked = false;
+        radio.removeAttribute("data-checked");
+    }
+    else
+    {
+        radio.setAttribute("data-checked", "true");
+    }
+}
+</script>
+  <div class="gcb-cols gcb-question-counter-increment gcb-question-row">
+      <div class="gcb-col-counters gcb-show-question-counter"></div>
+      <div class="qt-mc-question qt-embedded" id="cN6iVPso0E2M.9.4787062884532224">
+        <div class="qt-points">
+          <em>
+            
+              
+              2 points
+            
+          </em>
+        </div>
+
+        <div class="qt-question"><img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q10.jpg" style="width: 733px;" title=""></div>
+        <div class="qt-choices">
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="0" id="cN6iVPso0E2M.9.4787062884532224.0" name="cN6iVPso0E2M.9.4787062884532224" onclick="clearSelection(this)" type="checkbox" checked="checked">
+              <label for="cN6iVPso0E2M.9.4787062884532224.0">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q10a.JPG" style="width: 409px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="1" id="cN6iVPso0E2M.9.4787062884532224.1" name="cN6iVPso0E2M.9.4787062884532224" onclick="clearSelection(this)" type="checkbox">
+              <label for="cN6iVPso0E2M.9.4787062884532224.1">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q10b.JPG" style="width: 506px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="2" id="cN6iVPso0E2M.9.4787062884532224.2" name="cN6iVPso0E2M.9.4787062884532224" onclick="clearSelection(this)" type="checkbox" checked="checked">
+              <label for="cN6iVPso0E2M.9.4787062884532224.2">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q10c.JPG" style="width: 452px;" title="">
+              </label>
+            </div>
+          
+            <div class="gcb-mcq-choice">
+              <input data-index="3" id="cN6iVPso0E2M.9.4787062884532224.3" name="cN6iVPso0E2M.9.4787062884532224" onclick="clearSelection(this)" type="checkbox">
+              <label for="cN6iVPso0E2M.9.4787062884532224.3">
+                <img alt="" class="yui-img" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/a1q10d.JPG" style="width: 483px;" title="">
+              </label>
+            </div>
+          
+        </div>
+
+        <!--  -->
+
+        <div class="qt-feedback qt-hidden" role="alert">
+        </div>
+      </div>
+  </div>
+
+      
+
+    <div class="qt-check-answer qt-hidden">
+      <button class="gcb-button qt-check-answer-button">
+        
+         Check Answer 
+      </button>
+    </div>
+    <div class="qt-feedback qt-hidden" role="alert"></div>
+  </div>
+</div>
+  </div>
+  <div class="qt-assessment-button-bar">
+  
+    <div class="gcb-submit-only-once">
+    
+      
+        You may submit any number of times before the due date. The final submission will be considered for grading.
+      
+    
+    </div>
+
+    
+    
+      
+      <div class="qt-grade-report qt-hidden" data-question-batch-id="A103"></div>
+      
+      <div class="qt-grade-assessment" style="">
+        <button class="gcb-button qt-check-answer-button">
+           Submit Answers 
+        </button>
+      </div>
+      
+    
+  
+  </div>
+</div>
+
+    
+  
+</div>
+        </div><!-- /gcb-aside -->
+      
+      
+
+      <div id="gcb-nav-button-box" class="gcb-button-box">
+        
+        <div class="gcb-prev-button">
+          
+            
+            <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/unit?unit=5&amp;lesson=89"> Previous Page </a>
+          
+        </div>
+        <div class="gcb-next-button">
+          
+            
+            <a href="https://onlinecourses.nptel.ac.in/noc19_cs12/course"> End </a>
+          
+        </div>
+        
+      </div>
+    
+    <div class="gcb-html-hook" id="unit-before-content-ends"></div>
+  </div>
+</div>
+
+
+        <div class="gcb-html-hook" id="base-after-main-content-ends"><!-- base.after_main_content_ends --></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+    <!-- footer section -->
+  <div class="gcb-footer" id="gcb-footer">
+        <div class="gcb-aux">
+        <style>
+  .gcb-terms-block2 {
+          margin: auto;
+    max-width: 500px;
+          text-align: center;
+  }
+        </style>
+        <div id="gcb-terms" class="gcb-terms-block2">
+          <p>© 2014 NPTEL -
+            <a onclick='showPopupDiv("termsDiv"); return false;'>
+              
+              Privacy &amp; Terms
+            </a> -
+            <a onclick='showPopupDiv("honorDiv"); return false;'>
+              
+              Honor Code
+            </a> -
+            <a onclick='showPopupDiv("faqDiv"); return false;'>
+              
+              FAQs
+            </a>
+            
+              <script type="text/javascript">
+              (function() {
+               var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+               po.src = 'https://apis.google.com/js/plusone.js?onload=onLoadCallback';
+               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+               })();
+              </script>
+              - <span class="plusone-button" id="plusone-3" style="height: 20px; width: 70px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: top; background-position: initial initial; background-repeat: initial initial; ">
+                <div style="position: absolute; width: 450px; left: -10000px;" id="___plusone_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" id="I0_1552325350139" name="I0_1552325350139" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/fastbutton.html" data-gapiattached="true" width="100%" frameborder="0"></iframe></div><g:plusone size="medium" data-gapiscan="true" data-onload="true" data-gapistub="true"></g:plusone>
+              </span>
+            
+          </p>
+        </div>
+        </div>
+      <div id="gcb-footer-global" role="contentinfo">
+        <div class="gcb-aux">
+          <div class="footer-logo-block">
+            <section>
+              <h3>A project of</h3>
+                  <a href="https://nptel.ac.in/" target="_blank">
+                  <img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/footer-logo-nptel.png">
+                  </a>
+            </section>
+          </div>
+          <div class="footer-logo-block">
+            <section>
+              <h3>In association with</h3>
+                  <a href="http://www.nasscom.in/" target="_blank">
+                  <img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/footer-logo-nasscom.png">
+                  </a>
+            </section>
+          </div>
+          <div class="footer-logo-block">
+            <section>
+              <h3>Funded by</h3>
+                  <a href="http://mhrd.gov.in/" target="_blank">
+                  <img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/footer-mhrd.png">
+                  </a>
+            </section>
+          </div>
+          <div class="footer-logo-block">
+            <section>
+              <h3>Powered by</h3>
+                  <a href="http://www.google.com/" target="_blank">
+                  <img src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/footer-logo-google.png">
+                  </a>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-46447969-1', 'nptel.ac.in');
+      ga('send', 'pageview');
+    </script>
+    
+    <div class="gcb-html-hook" id="base-before-body-tag-ends"><!-- base.before_body_tag_ends --></div>
+
+  
+<iframe name="oauth2relay561226958" id="oauth2relay561226958" src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/postmessageRelay.html" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe><script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/prettify.js" type="text/javascript" id="https://storage.googleapis.com/static-prod-v11/assets/lib/google-code-prettify/prettify.js"></script><script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/activity-generic-1.js" type="text/javascript" id="https://storage.googleapis.com/static-prod-v11/modules/nptel/assets/js/activity-generic-1.3.js"></script><script src="Data%20Base%20Management%20System%20-%20-%20Unit%203%20-%20Week%201_files/main.js" type="text/javascript" id="https://storage.googleapis.com/static-prod-v11/modules/nptel/assets/js/main.js"></script></body></html>

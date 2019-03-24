@@ -12,7 +12,7 @@
 	<title>{{ title }}</title>
 </head>
 <body>
-	<body>
+	
     <header class="site-header">
       <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
@@ -30,9 +30,6 @@
 <li class="nav-item">
 <a class="nav-link" href="about">About Us</a>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="contact">Contact Us</a>
-</li>
 {% if current_user.is_authenticated and current_user.role == 'admin'  %}
 <li class="nav-item">
   <a class="nav-link" href="admin">account</a>
@@ -41,6 +38,9 @@
   <a class="nav-link" href="logout">logout</a>
 </li>
 {% elif current_user.is_authenticated and current_user.role == 'consumer'  %}
+<li class="nav-item">
+  <a class="nav-link" href="contact">Contact Us</a>
+</li>
 <li class="nav-item">
   <a class="nav-link" href="account">account</a>
 </li>
@@ -55,6 +55,9 @@
   <a class="nav-link" href="logout">logout</a>
 </li>
 {% else %}
+<li class="nav-item">
+  <a class="nav-link" href="contact">Contact Us</a>
+</li>
 <li class="nav-item">
 <a class="nav-link" href="register">Consumer registration</a>
 </li>
@@ -75,11 +78,11 @@ Login
         </div>
       </nav>
     </header>
-    <br><br><br>
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
-        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% block mesg %}
+          {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
               {% for category, message in messages %}
                 <div class="alert alert-{{ category }}">
@@ -88,6 +91,7 @@ Login
               {% endfor %}
             {% endif %}
           {% endwith %}
+          {% endblock mesg %}
           {% block content %}{% endblock %}
         </div>
       </div>
@@ -95,38 +99,6 @@ Login
 
     <section id="footer">
     <div class="container">
-      <div class="row text-center text-xs-center text-sm-left text-md-left">
-        <div class="col-xs-12 col-sm-4 col-md-4">
-          <h5>Quick links</h5>
-          <ul class="list-unstyled quick-links">
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4">
-          <h5>Quick links</h5>
-          <ul class="list-unstyled quick-links">
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4">
-          <h5>Quick links</h5>
-          <ul class="list-unstyled quick-links">
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-            <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
-          </ul>
-        </div>
-      </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
           <ul class="list-unstyled list-inline social text-center">
@@ -137,14 +109,12 @@ Login
             <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
           </ul>
         </div>
-        </hr>
       </div>  
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-          <p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
-          <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sunlimetech</a></p>
+          <p><u><a href="https://www.nationaltransaction.com/">National Gas production organization</a></u></p>
+          <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank"> IndianOil Corporation Ltd.</a></p>
         </div>
-        </hr>
       </div>  
     </div>
   </section>

@@ -1,0 +1,49 @@
+{% extends 'admin.html' %}
+
+{% block admin_ac %}
+<div id="page-content-wrapper" style="margin-left:-100px;margin-right:-200px;width: 100%">
+<form method="POST" action="" >
+            {{ form.hidden_tag() }}
+         <fieldset class="form-group col-md-10">
+          <legend class="border-bottom mb-4 ">{{ legend }}</legend>
+                 <div class="form-group">
+                    {{ form.st_name.label(class="form-control-label") }}
+
+                    {% if form.st_name.errors %}
+                        {{ form.st_name(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.st_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.st_name(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                </fieldset>
+                 <div class="form-group">
+               {{ form.submit(class="btn btn-outline-info btn-sm") }} 
+            </div>
+            </form>
+        </div>
+  <table class="table table-bordered" style="margin-left:300px;margin-top:-250px;">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">state Name</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+ </tr>
+  </thead>
+  <tbody>
+  {% for s in st %}
+ <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{  s.state_name }}</td>
+      <td><a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('Admin.update_state', sid=s.id) }}">edit</a></td>
+      <td><a class="btn btn-danger btn-sm mt-1 mb-1" href="{{ url_for('Admin.delete_state', sid=s.id) }}">Delete</a></td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock admin_ac %}

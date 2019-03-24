@@ -1,8 +1,20 @@
 {% extends 'layout.html' %}
+{% block mesg %}
+<div class='bg5' style="margin-right:-110%;margin-left: -35%; ">
+<div id="page-content-wrapper" style="margin-left:350px;width:40%;color:green;font-weight: bold">
+        <br><br>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        {% endblock mesg %}
 
 {% block content %}
- <div class="content-section">
-
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -140,6 +152,22 @@
                     {% endif %}
                 </div>
             </div>
+             <div class="form-group col-md-6">
+                <div class="form-group">
+                    {{ form.agency_name.label(class="form-control-label") }}
+
+                    {% if form.agency_name.errors %}
+                        {{ form.agency_name(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.agency_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.agency_name(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+            </div>
             <div class="form-group col-md-6">
                   <div class="form-group">
                     {{ form.connectionType.label(class="form-control-label") }}
@@ -222,10 +250,75 @@
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
         </form>
-    </div>
     <div class="border-top pt-3">
         <small class="text-muted">
-            Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+            Already Have An Account? <a class="ml-2" href="{{ url_for('Consumer.login') }}">Sign In</a>
         </small>
 </div>
+</div>
+</div>
+<script>
+        var state_select = document.getElementById("state");
+        var dist_select = document.getElementById("district");
+        var city_select = document.getElementById("city");
+        var age_select = document.getElementById("agency_name");
+        var con_select = document.getElementById("connectionType");
+        state_select.onchange = function()  {
+             
+            st = state_select.value;
+            
+            fetch('/district/' + st).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var district of data.dist) {
+                        optionHTML += '<option value="' + district.id + '">' + district.name + '</option>';
+                    }
+                    dist_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+       dist_select.onchange = function()  {
+             
+            di = dist_select.value;
+            
+            fetch('/city/' + di).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var city of data.cities) {
+                        optionHTML += '<option value="' + city.id + '">' + city.name + '</option>';
+                    }
+                    city_select.innerHTML = optionHTML;
+                })
+                
+            });
+
+            fetch('/agency_name/' + di).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var agency_name of data.agents) {
+                        optionHTML += '<option value="' + agency_name.id + '">' + agency_name.name + '</option>';
+                    }
+                    age_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+
+        age_select.onchange = function()  {
+             
+            age = age_select.value;
+            
+            fetch('/connectionType/' + age).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var connection_type of data.cnid) {
+                        optionHTML += '<option value="' + connection_type.id + '">' + connection_type.name + '</option>';
+                    }
+                    con_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+    </script>
 {% endblock content %}

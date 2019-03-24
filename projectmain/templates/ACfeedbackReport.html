@@ -1,0 +1,78 @@
+{% extends 'admin.html' %}
+
+{% block admin_ac %}
+<h3>Agent Feedback</h3>
+ <table class="table table-bordered " style="margin-right:300px;margin-left:-30px">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">description</th>
+      <th scope="col">Date sent</th>
+      <th scope="col">Email</th>
+      <th scope="col">name</th>
+      <th scope="col">role</th>
+    </tr>
+  </thead>
+  <tbody >
+  	{% for c in afback %}
+  	{% with a=agent.query.filter_by(aid=c.aid).first() %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ c.description }}</td>
+      <td>{{ c.sdate.strftime('%Y-%m-%d') }}</td>
+      <td>{{ a.email }}</td>
+      <td>{{ a.fname }}</td>
+      <td>{{ c.role }}</td>
+    </tr>
+   	{% endwith %}
+    {% endfor %}
+  </tbody>
+</table>
+<br>
+<H3>Consumer Feedback</H3>
+<table class="table table-bordered " style="margin-right:300px;margin-left:-30px">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">description</th>
+      <th scope="col">Date sent</th>
+      <th scope="col">Email</th>
+      <th scope="col">name</th>
+      <th scope="col">role</th>
+    </tr>
+  </thead>
+  <tbody >
+    {% for c in cfback %}
+    {% with a=user.query.filter_by(id=c.uid).first() %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ c.description }}</td>
+      <td>{{ c.sdate.strftime('%Y-%m-%d') }}</td>
+      <td>{{ a.email }}</td>
+      <td>{{ a.fname }}</td>
+      <td>{{ c.role }}</td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+  </tbody>
+</table>
+<br>
+<h3>User Feedback</h3>
+ <table class="table table-bordered " style="margin-right:300px;margin-left:-30px">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">description</th>
+      <th scope="col">Date sent</th>
+    </tr>
+  </thead>
+  <tbody >
+    {% for c in ufback %}
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ c.description }}</td>
+      <td>{{ c.sdate.strftime('%Y-%m-%d') }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock admin_ac %}

@@ -1,0 +1,34 @@
+{% extends 'admin.html' %}
+
+{% block admin_ac %}
+ <table class="table table-bordered " style="margin-right:300px;margin-left:-30px">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone No</th>
+      <th scope="col">Agency Name</th>
+      <th scope="col">District</th>
+      <th scope="col">State</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for c in agents %}
+  	{% with d=dist.query.filter_by(did=c.did).first() %}
+  	{% with s=state.query.filter_by(id=c.sid).first() %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ c.fname }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.phone_no }}</td>
+      <td>{{ c.agency_name }}</td>
+      <td>{{ d.dname }}</td>
+      <td>{{s.state_name}}</td>
+    </tr>
+    {% endwith %}
+   	{% endwith %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock admin_ac %}

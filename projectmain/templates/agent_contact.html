@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class='bg1' style="margin-left:-15%;margin-right:-64%">
+<br><br><br>
+<div id="page-content-wrapper" style="margin-left:400px;width:60% ">
+<form method="POST" action="" >
+            {{ form.hidden_tag() }}
+         <fieldset class="form-group col-md-7">
+          <legend class="border-bottom mb-4 " style="color:green;font-weight:bold;">Contact Distributor</legend>
+                 <div class="form-group">
+                    {{ form.state.label(class="form-control-label") }}
+
+                    {% if form.state.errors %}
+                        {{ form.state(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.state.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.state(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.district.label(class="form-control-label") }}
+
+                    {% if form.district.erdnamerors %}
+                        {{ form.district(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.district.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.district(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.agency_name.label(class="form-control-label") }}
+
+                    {% if form.agency_name.erdnamerors %}
+                        {{ form.agency_name(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.agency_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.agency_name(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+               {{ form.submit(class="btn btn-outline-success btn-sm") }} 
+            </div>
+            </form>
+        </div>
+    {% if age %}
+   <table class="table" style="margin-left:300px;width: 60%;color:green;font-weight:bold">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">sno</th>
+      <th scope="col">Agency Name</th>
+      <th scope="col">Phone NO</th>
+      <th scope="col">Email</th>
+      <th scope="col">Adress</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{  age.agency_name }}</td>
+      <td>{{ age.phone_no }}</td>
+      <td>{{ age.email }}</td>
+      <td>{{ age.adress }}</td>
+    </tr>
+</tbody>
+</table>
+{% endif %}
+<script>
+        var state_select = document.getElementById("state");
+        var dist_select = document.getElementById("district");
+        var age_select = document.getElementById("agency_name");
+        state_select.onchange = function()  {
+             
+            st = state_select.value;
+            
+            fetch('/district/' + st).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var district of data.dist) {
+                        optionHTML += '<option value="' + district.id + '">' + district.name + '</option>';
+                    }
+                    dist_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+       dist_select.onchange = function()  {
+             
+            di = dist_select.value;
+
+          fetch('/agency_name/' + di).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var agency_name of data.agents) {
+                        optionHTML += '<option value="' + agency_name.id + '">' + agency_name.name + '</option>';
+                    }
+                    age_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+
+    </script>
+  </div>
+{% endblock content %}

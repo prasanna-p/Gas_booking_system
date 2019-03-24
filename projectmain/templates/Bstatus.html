@@ -1,0 +1,31 @@
+{% extends 'user_account.html' %}
+
+{% block user_ac %}
+ <h3>Gas Booking Status</h3>
+ <table class="table" frame='box' style="margin-right:300px;margin-left:-30px">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Agency Name</th>
+      <th scope="col">Booked Date</th>
+      <th scope="col">Delivered Date</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in book  %}
+    {% with a = agent.query.filter_by(aid=user.aid).first() %}
+    <tr>
+       <td>{{ a.agency_name }}</td>
+        <td>{{  user.bdate.strftime('%Y-%m-%d') }}</td>
+        {% if user.ddate %}
+          <td>{{ user.ddate.strftime('%Y-%m-%d') }}</td>
+        {% else %}
+          <td>{{ user.ddate }}</td>
+        {% endif %}
+        <td>{{ user.status }}</td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock user_ac %}
