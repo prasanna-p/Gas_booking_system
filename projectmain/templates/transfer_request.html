@@ -1,0 +1,171 @@
+{% extends 'user_account.html' %}
+
+{% block user_ac %}
+			
+<div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Location Transfer</legend>
+                <div class="form-group">
+                    
+                    {{ form.state.label(class="form-control-label") }}
+                    {% if form.state.errors %}
+                        {{ form.state(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.state.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.state(class="form-control form-control-sm") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group">
+                    
+                    {{ form.district.label(class="form-control-label") }}
+                    {% if form.district.errors %}
+                        {{ form.district(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.district.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.district(class="form-control form-control-sm") }}
+                    {% endif %}
+               
+                </div>
+                <div class="form-group">
+                    
+                    {{ form.city.label(class="form-control-label") }}
+                    {% if form.city.errors %}
+                        {{ form.city(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.city.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.city(class="form-control form-control-sm") }}
+                    {% endif %}
+               
+                </div>
+                <div class="form-group">
+                    
+                    {{ form.agency_name.label(class="form-control-label") }}
+                    {% if form.agency_name.errors %}
+                        {{ form.agency_name(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.agency_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.agency_name(class="form-control form-control-sm") }}
+                    {% endif %}
+               
+                </div>
+                <div class="form-group">
+                    
+                    {{ form.connectionType.label(class="form-control-label") }}
+                    {% if form.connectionType.errors %}
+                        {{ form.connectionType(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.connectionType.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.connectionType(class="form-control form-control-sm") }}
+                    {% endif %}
+               
+                </div>
+                <div class="form-group">
+                    
+                    {{ form.reason.label(class="form-control-label") }}
+                    {% if form.reason.errors %}
+                        {{ form.reason(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.reason.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.reason(class="form-control form-control-sm") }}
+                    {% endif %}
+               
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-danger") }}
+            </div>
+        </form>
+    </div>
+    <script>
+        var state_select = document.getElementById("state");
+        var dist_select = document.getElementById("district");
+        var city_select = document.getElementById("city");
+        var age_select = document.getElementById("agency_name");
+        var con_select = document.getElementById("connectionType");
+        state_select.onchange = function()  {
+             
+            st = state_select.value;
+            
+            fetch('/district/' + st).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var district of data.dist) {
+                        optionHTML += '<option value="' + district.id + '">' + district.name + '</option>';
+                    }
+                    dist_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+       dist_select.onchange = function()  {
+             
+            di = dist_select.value;
+            
+            fetch('/city/' + di).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var city of data.cities) {
+                        optionHTML += '<option value="' + city.id + '">' + city.name + '</option>';
+                    }
+                    city_select.innerHTML = optionHTML;
+                })
+                
+            });
+
+            fetch('/agency_name/' + di).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var agency_name of data.agents) {
+                        optionHTML += '<option value="' + agency_name.id + '">' + agency_name.name + '</option>';
+                    }
+                    age_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+
+        age_select.onchange = function()  {
+             
+            age = age_select.value;
+            
+            fetch('/connectionType/' + age).then(function(response) {
+                response.json().then(function(data) {
+                    var optionHTML = '';
+                    for (var connection_type of data.cnid) {
+                        optionHTML += '<option value="' + connection_type.id + '">' + connection_type.name + '</option>';
+                    }
+                    con_select.innerHTML = optionHTML;
+                })
+                
+            });
+        }
+    </script>
+
+{% endblock user_ac %}

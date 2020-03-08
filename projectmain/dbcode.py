@@ -169,3 +169,13 @@ class feedback(db.Model):
     uid = db.Column(db.Integer,db.ForeignKey(User_reg.id),nullable=True)
     aid = db.Column(db.Integer,db.ForeignKey(agent.aid),nullable=True)
     role = db.Column(db.String(20),nullable=False)
+
+class connection_request(db.Model):
+    """docstring fss booking"""
+    cid = db.Column(db.Integer,primary_key=True)
+    request_date = db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
+    uid = db.Column(db.Integer,db.ForeignKey(User_reg.id),nullable=False)
+    aid = db.Column(db.Integer,db.ForeignKey(agent.aid),nullable=False)
+    ctid =db.Column(db.Integer,db.ForeignKey(connection_type.ctid,ondelete="CASCADE"),nullable=False)
+    request_reson = db.Column(db.String(250),nullable=False)
+    status = db.Column(db.String(20),nullable=False)

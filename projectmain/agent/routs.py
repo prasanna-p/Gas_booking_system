@@ -2,8 +2,8 @@ from flask import render_template,url_for,flash, redirect,request,Blueprint,abor
 from projectmain.main.forms import (LoginForm,UpdateForm,RequestResetForm,ResetPasswordForm,FeedBackForm)
 from projectmain import bcrypt,db
 from flask_login import login_user,current_user,logout_user,login_required
-from projectmain.dbcode import roles,agent,booking,User_reg,city,connection_type,feedback
-from projectmain.main.util import save_picture,dsend_reset_email,send_conformation_email
+from projectmain.dbcode import roles,agent,booking,User_reg,city,connection_type,feedback,connection_request
+from projectmain.main.util import save_picture,dsend_reset_email,send_conformation_email,TransferRequest_confirmationMail,TransferRequest_rejection
 from datetime import datetime
 
 
@@ -154,3 +154,50 @@ def AgentFeedBack():
         flash('Your feed Back has been submitted successfully','success')
         return redirect(url_for('Agent.AgentFeedBack'))
     return render_template('afeedback.html',form=form,title='feedbck',legend='distributor feed back')
+
+@Agent.route("/Connection_request", methods=['GET', 'POST'])
+def Connection_request():
+    if current_user.is_authenticated and current_user.role=='agent':
+        pass
+    else:
+        abort(403)
+    request_details = connection_request.query.filter_by(aid=current_user.aid,status='NA').all()
+    return render_template('reuest_detail.html',title='transfer request report',request_details=request_details,user=User_reg,ctype=connection_type)
+
+@Agent.route("/Connection_request/<int:uid>/<int:ctid>/<int:request_id>/transferRequestUpdate",methods=['GET','POST'])
+@login_required
+def transferRequestUpdate(uid,ctid,request_id):
+    if current_user.is_authenticated and current_user.role=='agent':
+        pass
+    else:
+        abort(403)
+    user = User_reg.query.filter_by(id=uid).first()
+    agent_info = agent.query.filter_by(aid = current_user.aid).first()
+    user.sid = agent_info.sid
+    user.did = agent_info.did
+    user.cid = agent_info.cid
+    user.aid = agent_info.aid
+    user.ctid = ctid
+    request_status = connection_request.query.filter_by(cid=request_id).first()
+    request_status.status = "AP"
+    db.session.commit()
+    agency_name = agent_info.agency_name
+    TransferRequest_confirmationMail(user,agency_name)
+    return redirect(url_for('Agent.connection_request'))
+
+@Agent.route("/Connection_request/<int:request_id>/<int:uid>/RejectTransferRequest", methods=['GET', 'POST'])
+@login_required
+def RejectTransferRequest(request_id,uid):
+    if current_user.is_authenticated and current_user.role=='agent':
+        pass
+    else:
+        abort(403)
+    request = connection_request.query.get_or_404(request_id)
+    db.session.delete(request)
+    db.session.commit()
+    user = User_reg.query.filter_by(id=uid).first()
+    agent_info = agent.query.filter_by(aid = current_user.aid).first()
+    agency_name = agent_info.agency_name
+    TransferRequest_rejection(user,agency_name)
+    flash('request has been rejected!', 'success')
+    return redirect(url_for('Agent.connection_request'))

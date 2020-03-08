@@ -1,9 +1,9 @@
 from flask import render_template,url_for,flash, redirect,request,jsonify,Blueprint,abort
 from projectmain.main.forms import (LoginForm,UpdateForm,RequestResetForm,ResetPasswordForm,FeedBackForm)
-from projectmain.consumer.forms import RegistrationForm
+from projectmain.consumer.forms import RegistrationForm,LocationTransferForm
 from projectmain import bcrypt,db
 from flask_login import login_user,current_user,logout_user,login_required
-from projectmain.dbcode import roles,User_reg,state,district,city,agent,connection_type,booking,feedback
+from projectmain.dbcode import roles,User_reg,state,district,city,agent,connection_type,booking,feedback,connection_request
 from projectmain.main.util import save_picture,send_reset_email,send_email
 from datetime import datetime
 
@@ -198,3 +198,26 @@ def Complaint():
         flash('Your complaint has been recieved','success')
         return redirect(url_for('Consumer.Complaint'))
     return render_template('complaint.html',title='complaint',form=form)
+
+@Consumer.route("/Location_transfer",methods = ['GET','POST'])
+@login_required
+def Location_transfer():
+    if current_user.is_authenticated and current_user.role=='consumer':
+        pass
+    else:
+        abort(403)
+    form = LocationTransferForm()
+    form.state.choices =[(s.id, s.state_name) for s in state.query.all()]
+    form.district.choices = [(d.did, d.dname) for d in db1.query.filter_by(sid=form.state.data).all()]
+    form.city.choices = [(c.cid, c.cname) for c in db2.query.filter_by(did=form.district.data).all()]
+    form.agency_name.choices = [(a.aid, a.agency_name) for a in agent.query.filter_by(did=form.district.data).all()]
+    form.connectionType.choices =[(c.ctid, c.cname) for c in 
+              connection_type.query.filter(connection_type.agents.any(aid=form.agency_name.data)).all()]
+    if form.validate_on_submit():
+        request_data = connection_request(uid =current_user.uid,aid = form.agency_name.data,ctid=form.connectionType.data,request_reson=form.reason.data,status = "NA" )
+        db.session.add(request_data)
+        db.session.commit()
+        flash('Your Transfer request has been sent to the agency','success')
+        return redirect(url_for('Consumer.Location_transfer'))
+    return render_template('transfer_request.html',title='Transfer Request',form=form)
+

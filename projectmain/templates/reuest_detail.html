@@ -1,0 +1,37 @@
+{% extends 'distributor.html' %}
+
+{% block agent_ac %}
+
+  <table class="table table-bordered" style="margin-right:300px;margin-left:-30px">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Consumer Name</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Connection Type</th>
+      <th scope="col">transfer reason</th>
+      <th scope="col">Status</th>
+       <th scope="col"></th>
+       <th scope="col"></th>
+ </tr>
+  </thead>
+  <tbody>
+  {% for request in request_details %}
+  {% with user=user.query.filter_by(id=request.uid).first() %}
+  {% with connecion=ctype.query.filter_by(ctid=request.ctid).first() %}
+ <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{  user.fname }}</td>
+      <td>{{  user.phone_no }}</td>
+      <td>{{  connecion.cname }}</td>
+      <td>{{  request.request_reson }}</td>
+      <td>{{  request.status }}</td>
+      <td><a class="btn btn-info btn-sm mt-1 mb-1" href="{{url_for('Agent.transferRequestUpdate',uid=user.id,ctid=connecion.ctid,request_id = request.cid ) }}">accept</a></td>
+      <td><a class="btn btn-danger btn-sm mt-1 mb-1" href="{{ url_for('Agent.RejectTransferRequest', request_id = request.cid,uid=user.id ) }}">Reject</a></td>
+    </tr>
+    {% endwith %}
+    {% endwith %}
+   {% endfor %}
+</tbody>
+</table>
+{% endblock agent_ac %}

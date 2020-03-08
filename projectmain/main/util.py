@@ -58,3 +58,19 @@ def send_conformation_email(user,age):
                   recipients=[user.email])
     msg.body = f'''Your request for the Gas has been Accepted by { age.agency_name }.the cylinder will be delivered within 3 working days.thank you for your being with Us.'''
     mail.send(msg)
+
+def TransferRequest_confirmationMail(user,age):
+    msg = Message('Transfer Request Confirmation',
+                  sender='noreply@demo.com',
+                  recipients=[user.email])
+    msg.body = f'''Your request for the Location Transfer has been Accepted by { age }.You can now start booking from the new Agency.Please Goto your Connection And book the gas'''
+    mail.send(msg)
+
+def TransferRequest_rejection(user,age):
+    msg = Message('Transfer Request Confirmation',
+                  sender='noreply@demo.com',
+                  recipients=[user.email])
+    msg.body = f'''Your request for the Location Transfer has been Rejcted by { age }.
+    We are really sorry for your inconviniece.please try with other agencies near by your location'''
+    mail.send(msg)
+

@@ -37,4 +37,11 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('That email is taken. Please choose a different one.')
 
-
+class LocationTransferForm(FlaskForm):
+    state = SelectField('state',coerce=int,choices=[])
+    district = SelectField('district',choices=[], coerce=int)  
+    city = SelectField('city',choices=[], coerce=int)
+    agency_name = SelectField('agency_name',coerce=int, choices = [])
+    connectionType = SelectField('connectionType',coerce=int, choices = [])
+    reason = TextAreaField("transfer reaon")
+    submit = SubmitField('Submit')
