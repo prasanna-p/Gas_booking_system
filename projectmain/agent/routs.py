@@ -183,7 +183,7 @@ def transferRequestUpdate(uid,ctid,request_id):
     db.session.commit()
     agency_name = agent_info.agency_name
     TransferRequest_confirmationMail(user,agency_name)
-    return redirect(url_for('Agent.connection_request'))
+    return redirect(url_for('Agent.Connection_request'))
 
 @Agent.route("/Connection_request/<int:request_id>/<int:uid>/RejectTransferRequest", methods=['GET', 'POST'])
 @login_required
@@ -200,4 +200,4 @@ def RejectTransferRequest(request_id,uid):
     agency_name = agent_info.agency_name
     TransferRequest_rejection(user,agency_name)
     flash('request has been rejected!', 'success')
-    return redirect(url_for('Agent.connection_request'))
+    return redirect(url_for('Agent.Connection_request'))
