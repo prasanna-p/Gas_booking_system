@@ -1,6 +1,6 @@
 # Gas_booking_system
 A web application provide the fecility to book the gas online.
-the project is still under development.
+the project completed.
 I used flask frame work to implement this web application.
 the folder projectmain is the package where the source code is written.
 the static folder contains the css and pictures.
