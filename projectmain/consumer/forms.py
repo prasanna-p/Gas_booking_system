@@ -3,6 +3,7 @@ from wtforms import (StringField, PasswordField, SubmitField,TextAreaField,Selec
                     IntegerField)
 from wtforms.validators import DataRequired, Length, Email, EqualTo,ValidationError
 from projectmain.dbcode import User_reg
+import re
 
 
 class RegistrationForm(FlaskForm):
@@ -36,6 +37,27 @@ class RegistrationForm(FlaskForm):
         user = User_reg.query.filter_by(email=email.data).first()
         if user:
             raise ValidationError('That email is taken. Please choose a different one.')
+    
+    def validate_FirstName(self,FirstName):
+        pattern = re.compile("[A-Za-z]+")
+        res = pattern.match(FirstName.data)
+        if not res or res.group() != FirstName.data:
+            raise ValidationError('Enter a valid name')
+    
+    def validate_LastName(self,LastName):
+        pattern = re.compile("[A-Za-z]+")
+        res = pattern.match(LastName.data)
+        if not res or res.group() != LastName.data:
+            raise ValidationError('Enter a valid name(dont use digits or special chars)')
+    
+    def validate_PhoneNo(self,PhoneNo):
+        pattern = re.compile("^[6-9][0-9]{9}")
+        res = pattern.match(PhoneNo.data)
+        if not res or res.group() != PhoneNo.data:
+            raise ValidationError('Enter a valid Phone number')
+
+
+
 
 class LocationTransferForm(FlaskForm):
     state = SelectField('state',coerce=int,choices=[])
