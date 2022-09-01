@@ -1,0 +1,6 @@
+{
+  "EMAIL_USER":"your email",
+  "EMAIL_PASS":"your password",
+  "SECRET_KEY":"b5wo8qE/2wmMwV4INNK192IIzrZndyhmmoRY3D2vg4ZcHBDpMSc+yb23JKIAgjzdG+PAhqLBKCqA1KSZCAHMeQ==",
+  "SQLALCHEMY_DATABASE_URI":"sqlite:///gasdb.db"
+}
