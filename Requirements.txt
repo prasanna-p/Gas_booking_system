@@ -12,7 +12,7 @@ itsdangerous==2.0.1
 jason==0.1.7
 Jinja2==3.0.3
 MarkupSafe==2.0.1
-Pillow==8.4.0
+Pillow==9.0.1
 simplejson==3.17.6
 SQLAlchemy==1.4.40
 typing_extensions==4.1.1
